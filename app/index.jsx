@@ -3,9 +3,9 @@ import { Redirect, router } from "expo-router";
 import { View, Text, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
-import {CustomButton} from "../components"
+import { CustomButton } from "../components"
 
-const Welcome = () => {
+const App = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView
@@ -45,15 +45,20 @@ const Welcome = () => {
             Exploration with Aora
           </Text>
 
-          <CustomButton/>
+          <CustomButton
+            title="Continue with Email"
+            handlePress={() => router.push("/signin")}
+            containerStyles="w-full mt-7"
+          />
 
 
         </View>
       </ScrollView>
 
       <StatusBar backgroundColor="#161622" style="light" />
+      
     </SafeAreaView>
   );
 };
 
-export default Welcome;
+export default App;
