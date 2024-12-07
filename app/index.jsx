@@ -1,26 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { Redirect, router } from "expo-router";
-import { View, Text, Image, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../constants";
-// import { CustomButton, Loader } from "../components";
-
-// import { useGlobalContext } from "../context/GlobalProvider";
+import {CustomButton} from "../components"
 
 const Welcome = () => {
-
-  const handlePress = () => {
-    console.warn("Btn clicked");
-
-  }
-  // const { loading, isLogged } = useGlobalContext();
-
-  // if (!loading && isLogged) return <Redirect href="/home" />;
-
   return (
     <SafeAreaView className="bg-primary h-full">
-      {/* <Loader isLoading={loading} /> */}
-
       <ScrollView
         contentContainerStyle={{
           height: "100%",
@@ -57,24 +44,9 @@ const Welcome = () => {
             Where Creativity Meets Innovation: Embark on a Journey of Limitless
             Exploration with Aora
           </Text>
-          {/* 
-          <CustomButton
-            title="Continue with Email"
-            handlePress={() => router.push("/signin")}
-            containerStyles="w-full mt-7"
-          /> */}
-          <TouchableOpacity
-            onPress={handlePress}
-            activeOpacity={0.7}
-            className={"bg-secondary rounded-xl min-h-[62px] flex flex-row justify-center items-center px-8 mt-6"}
 
-          >
-            <Text className={`text-primary font-psemibold text-lg`}>
-             Get Started
-            </Text>
+          <CustomButton/>
 
-
-          </TouchableOpacity>
 
         </View>
       </ScrollView>
