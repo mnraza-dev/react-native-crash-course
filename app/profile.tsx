@@ -4,7 +4,10 @@ import React from 'react'
 const Profile = () => {
   return (
     <View>
-      <Text>Profile</Text>
+      <Text className='font-semibold text-center text-4xl py-2 text-green-600'>
+        Profile
+
+      </Text>
     </View>
   )
 }
