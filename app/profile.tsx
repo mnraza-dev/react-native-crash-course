@@ -1,17 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Link } from 'expo-router'
 
-const App = () => {
+const Profile = () => {
   return (
     <View>
-      <Text>App</Text>
-
-      <Link href='/profile'>Go To Profile</Link>
+      <Text>Profile</Text>
     </View>
   )
 }
 
-export default App
+export default Profile
 
 const styles = StyleSheet.create({})

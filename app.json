@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "react-native-crash-course",
-    "slug": "react-native-crash-course",
+    "name": "aora",
+    "slug": "aora",
     "version": "1.0.0",
-
-    "scheme": "react-native-crash-course",
+    "scheme": "aora",
+    "newArchEnabled": true,
     "web": {
       "bundler": "metro",
       "output": "static",
