@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export default function RootLayout() {
   SplashScreen.preventAutoHideAsync();
-  
+
   const [fontsLoaded, error] = useFonts({
 
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
@@ -28,6 +28,6 @@ export default function RootLayout() {
   if (!fontsLoaded && !error) return null
 
   return <Stack>
-    <Stack.Screen name='index' options={{ title: 'App' }} />
-   </Stack>;
+    <Stack.Screen name='index' options={{ title: 'Welcome' }} />
+  </Stack>;
 }
