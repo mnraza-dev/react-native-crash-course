@@ -1,10 +1,10 @@
-import {  Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import React from 'react'
 
 const SignUp = () => {
   return (
     <View>
-      <Text>SignUp</Text>
+      <Text className="flex justify-center items-center text-4xl">SignUp</Text>
     </View>
   )
 }
