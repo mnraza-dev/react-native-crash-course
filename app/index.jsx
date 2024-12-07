@@ -10,7 +10,7 @@ const App = () => {
       <Text className='text-8xl font-pblack'>App</Text>
 
       <Link 
-      className='text-green-500 py-4 text-2xl'
+      className='text-green-500 py-4 text-6xl font-pextralight'
        href='/home'>
         Go To Home</Link>
     </View>
