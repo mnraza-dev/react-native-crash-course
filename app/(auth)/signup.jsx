@@ -9,8 +9,6 @@ import { CustomButton, FormField } from "../../components";
 // import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
-  // const { setUser, setIsLogged } = useGlobalContext();
-
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -19,24 +17,22 @@ const SignUp = () => {
   });
 
   const submit = async () => {
-    if (!form.username || form.email || form.password) {
-      Alert.alert('Error', 'All fields are required !')
-
+    if (form.username === "" || form.email === "" || form.password === "") {
+      Alert.alert("Error", "Please fill in all fields");
     }
-    setSubmitting(true)
+
+    setSubmitting(true);
     try {
-      const result = await register(form.email, form.password, form.username)
-      // se to global context
+      const result = await register(form.email, form.password, form.username);
+      // setUser(result);
+      // setIsLogged(true);
 
-      router.replace('/home')
-
+      router.replace("/home");
     } catch (error) {
-      Alert.alert('Error', error.message)
+      Alert.alert("Error", error.message);
     } finally {
-      setSubmitting(false)
+      setSubmitting(false);
     }
-    register()
-
   };
 
   return (
