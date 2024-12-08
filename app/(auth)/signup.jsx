@@ -4,38 +4,40 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
 
 import { images } from "../../constants";
-// import { createUser } from "../../lib/appwrite";
+import { register } from "../../lib/appwrite";
 import { CustomButton, FormField } from "../../components";
 // import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
   // const { setUser, setIsLogged } = useGlobalContext();
 
-  // const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
   });
 
-  // const submit = async () => {
-  //   if (form.username === "" || form.email === "" || form.password === "") {
-  //     Alert.alert("Error", "Please fill in all fields");
-  //   }
+  const submit = async () => {
+    if (!form.username || form.email || form.password) {
+      Alert.alert('Error', 'All fields are required !')
 
-  //   setSubmitting(true);
-  //   try {
-  //     const result = await createUser(form.email, form.password, form.username);
-  //     setUser(result);
-  //     setIsLogged(true);
+    }
+    setSubmitting(true)
+    try {
+      const result = await register(form.email, form.password, form.username)
+      // se to global context
 
-  //     router.replace("/home");
-  //   } catch (error) {
-  //     Alert.alert("Error", error.message);
-  //   } finally {
-  //     setSubmitting(false);
-  //   }
-  // };
+      router.replace('/home')
+
+    } catch (error) {
+      Alert.alert('Error', error.message)
+    } finally {
+      setSubmitting(false)
+    }
+    register()
+
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -80,9 +82,9 @@ const SignUp = () => {
 
           <CustomButton
             title="Sign Up"
-            handlePress={()=>{}}
+            handlePress={submit}
             containerStyles="mt-7"
-            // isLoading={isSubmitting}
+          // isLoading={isSubmitting}
           />
 
           <View className="flex justify-center pt-5 flex-row gap-2">
